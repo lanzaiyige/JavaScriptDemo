@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>哇哈哈</title>
+    <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+  </head>
+    <body class="HolyGrail">
+      <header>Header</header>
+      <div>
+        <form name="selectForm">
+          <p>
+            <label for="musicTypes">Choose some music types, then click the button below:</label>
+            <select id="musicTypes" name="musicTypes" multiple="multiple">
+              <option selected="selected">R&B</option>
+              <option>爵士</option>
+              <option>布鲁斯</option>
+              <option>新纪元</option>
+              <option>古典</option>
+              <option>戏剧</option>
+            </select>
+          </p>
+          <p><input id="btn" type="button" value="选择了多少个选项?" /></p>
+        </form>
+      </div>
+
+      <div class="HolyGrail-body">
+        <main class="HolyGrail-content">Content</main>
+        <nav class="HolyGrail-nav">NAV</nav>
+        <aside class="HolyGrail-ads">ADS</aside>
+      </div>
+      <footer>FOOTER</footer>
+    <style>
+    .HolyGrail {
+display: flex;
+min-height: 100vh;
+flex-direction: column;
+}
+
+header,
+footer {
+  display: none;
+flex: 1;
+}
+
+.HolyGrail-body {
+  display: none;
+/* display: flex; */
+flex: 1;
+}
+
+.HolyGrail-content {
+flex: 1;
+}
+
+.HolyGrail-nav, .HolyGrail-ads {
+/* 两个边栏的宽度设为12em */
+flex: 0 0 12em;
+}
+
+.HolyGrail-nav {
+/* 导航放到最左边 */
+order: -1;
+}
+    </style>
+  </body>
+  <script type="text/javascript" src="./demo.js">
+  </script>
+</html>
