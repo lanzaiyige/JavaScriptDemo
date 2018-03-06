@@ -717,4 +717,87 @@ var result = array.reduce(function(x,y){
 },0);
 // console.log(result);
 
-console.log(Array.isArray(array));
+// console.log(Array.isArray(array));
+
+var simulatorArray = {};
+var i = 0;
+while(i < 5) {
+  simulatorArray[i] = i * 2;
+  i++;
+}
+
+// console.log(simulatorArray);
+// console.log(Array.isArray(simulatorArray));
+
+var s = 'test';
+// console.log(s.charAt(0));
+
+var ff = function(x,y) {
+  return x+y;
+}
+
+var fo = {};
+fo.ff = ff;
+// console.log(fo.ff(1,2));
+
+var addition = {
+  a : 1,
+  b : 2,
+  add : function() {
+    this.result = this.a + this.b;
+  }
+};
+addition.add()
+// console.log(addition.result);
+
+function kk_max() {
+  var max = 0;
+  for(var i = 0;i < arguments.length;i++) {
+    if(arguments[i] > max) max = arguments[i];
+  }
+  return max;
+}
+
+// console.log(kk_max(1,2,3,4,5,6,9));
+
+var scope = 'global';
+function testScope() {
+  var scope = 'local';
+  function f() {
+    return scope;
+  }
+
+  return f;
+}
+
+var uniqueIdentifier = (function (){
+  var counter = 0;
+  return function() {
+    return ++counter;
+  };
+}());
+
+// console.log(uniqueIdentifier());
+
+var callTest = {
+  'haha' : function(){
+    console.log('haha');
+  }
+};
+
+function testCall(x,y) {
+  console.log('x:'+x+',y:'+y);
+}
+
+// testCall.call(this, 1,2);
+
+function threesix(y) {
+  return this.x + y;
+}
+
+var o = {x:1};
+var g = threesix.bind(o);
+// console.log(g(2));
+
+var threeseventy = new Function("x","y","return x+y");
+console.log(threeseventy(4,2));
