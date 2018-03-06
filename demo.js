@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 if (Math.abs(1/3 - (1 - 2/3)) < 0.0000001) {
 // if (isNaN(NaN)) {
@@ -614,9 +614,9 @@ Object.defineProperty(d, "year", {
 });
 
 var now = new Date();
-console.log(now.year);
+// console.log(now.year);
 now.year = 2019;
-console.log(now.year);
+// console.log(now.year);
 
 function insertionSort(array) {
   var length = array.length,
@@ -640,4 +640,81 @@ function insertionSort(array) {
 }
 
 var result = insertionSort([5,6,3,1,8,7,2,4]);
-console.log(result);
+// console.log(result);
+
+// var o1 = Object.create({x:1,y:2});
+// console.log(o1.prototype)
+
+// var oo = [
+//   Object.create({x:1,y:2}),
+//   Object.create({x:1,y:2}),
+//   Object.create({x:1,y:2}),
+//   Object.create({x:1,y:2})
+// ];
+
+function getValue(port) {
+  var total = 0.0;
+  for(var stock in port) {
+    console.log(stock);
+  }
+}
+
+function inherit(p) {
+  if(p == null) throw TypeError();
+  if(Object.create) {
+    return Object.create(p);
+  }
+
+  var t = typeof p;
+  if(t !== "object" && t !== "function") throw TypeError();
+  function f() {};
+  f.prototype = p;
+  return new f();
+}
+
+
+// var o = {r:1};
+// var c = inherit(o);
+// c.x = 1;
+// c.y = 1;
+
+// console.log(c.propertyIsEnumerable("r"));
+
+// var o = {x:1,y:2,z:3};
+// for(p in o) {
+//   console.log(p)
+// }
+
+
+var o = {
+  data_prop : "value",
+  get accessor_prop() {
+    return this.data_prop;
+  },
+  set accessor_prop(value) {
+    this.data_prop = value
+  }
+}
+
+o.accessor_prop = 1;
+// console.log(o.accessor_prop);
+
+var dodo = {};
+Object.defineProperty(dodo, "x",{
+  value:undefined,
+  writable:false,
+  enumerable:false,
+  configurable:true
+});
+
+dodo.x = 12;
+// console.log(dodo.x);
+
+var array = [1,2,3,4,5];
+// console.log(Object.getPrototypeOf(array));
+var result = array.reduce(function(x,y){
+  return x+y;
+},0);
+// console.log(result);
+
+console.log(Array.isArray(array));
